@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Student Grade Tracker</title>
+
+<link rel="stylesheet" href="studentgradetracker.css">
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Background bubbles -->
+<div class="bubble bubble1"></div>
+<div class="bubble bubble2"></div>
+<div class="bubble bubble3"></div>
+<div class="bubble bubble4"></div>
+<div class="bubble bubble5"></div>
+
+<div class="container">
+
+<!-- HOME PAGE -->
+<section id="homePage">
+
+<div class="titleBox">
+<h1>
+Student Grade
+<span>Tracker</span>
+</h1>
+
+<div class="line"></div>
+
+<p>
+Add <b>3–5 students</b> with their grades, then view the full summary.
+</p>
+</div>
+
+<!-- Add student card -->
+<div class="card">
+
+<h2>➕ Add Student</h2>
+
+<div class="formGrid">
+
+<div>
+
+<label>Student Name</label>
+
+<input
+type="text"
+id="studentName"
+placeholder="e.g. Alice Johnson">
+
+</div>
+
+<div>
+
+<label>Grades (comma-separated, 0-100)</label>
+
+<input
+type="text"
+id="studentGrades"
+placeholder="e.g. 88,92,76,95">
+
+</div>
+
+</div>
+
+<button class="addBtn" onclick="addStudent()">
+Add Student
+</button>
+
+<div class="progressRow">
+
+<div class="progressDots">
+
+<div class="dot" id="dot1"></div>
+<div class="dot" id="dot2"></div>
+<div class="dot" id="dot3"></div>
+<div class="dot" id="dot4"></div>
+<div class="dot" id="dot5"></div>
+
+</div>
+
+<p id="progressText">
+0 / 5 students · need 3 more
+</p>
+
+</div>
+
+</div>
+
+<!-- student cards -->
+<div id="studentCards">
+
+<div class="emptyCard">
+
+🎓
+
+<p>
+No students yet — add at least 3 to unlock the summary.
+</p>
+
+</div>
+
+</div>
+
+<button
+id="summaryBtn"
+class="summaryBtn"
+onclick="showSummary()">
+
+📊 View Full Summary →
+
+</button>
+
+</section>
+
+<!-- SUMMARY PAGE -->
+<section
+id="summaryPage"
+style="display:none;">
+
+<button
+class="backBtn"
+onclick="goBack()">
+
+← Back to Tracker
+
+</button>
+
+<div class="summaryTitle">
+
+<h1>
+Summary
+<span>Report</span>
+</h1>
+
+<div class="line"></div>
+
+<p>
+Grade comparison across all students.
+</p>
+
+</div>
+
+<!-- top performer -->
+<div class="topCard">
+
+<div class="trophy">
+🏆
+</div>
+
+<div>
+
+<h3>TOP PERFORMER</h3>
+
+<h2 id="topStudentName">
+
+</h2>
+
+<p>
+
+Average Score:
+<span id="topAverage">
+
+</span>
+
+</p>
+
+</div>
+
+</div>
+
+<!-- statistics -->
+<div class="statsGrid">
+
+<div class="statCard">
+
+<h1 id="totalStudents">
+
+0
+
+</h1>
+
+<p>Total Students</p>
+
+</div>
+
+<div class="statCard">
+
+<h1 id="classAverage">
+
+0
+
+</h1>
+
+<p>Class Average</p>
+
+</div>
+
+<div class="statCard">
+
+<h1 id="highestScore">
+
+0
+
+</h1>
+
+<p>Highest Score</p>
+
+</div>
+
+<div class="statCard">
+
+<h1 id="lowestScore">
+
+0
+
+</h1>
+
+<p>Lowest Score</p>
+
+</div>
+
+</div>
+
+<!-- comparison -->
+<div class="card">
+
+<h2>
+📊 Grade Comparison
+</h2>
+
+<div id="comparisonBox">
+
+</div>
+
+</div>
+
+<!-- detailed table -->
+<div class="card">
+
+<h2>
+📋 Detailed Results
+</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Rank</th>
+<th>Name</th>
+<th>Average</th>
+<th>Highest</th>
+<th>Lowest</th>
+<th>Grade</th>
+
+</tr>
+
+</thead>
+
+<tbody id="resultTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+<button
+class="backBtn bottomBack"
+onclick="goBack()">
+
+← Back to Tracker
+
+</button>
+
+</section>
+
+</div>
+
+<script src="studentgradetracker.js"></script>
+
+</body>
+</html>
