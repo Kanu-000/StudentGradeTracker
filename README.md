@@ -29,7 +29,8 @@ A simple and elegant web application to add student grades, calculate averages, 
 1. Download/clone the repository
 2. Open `index.html` in any web browser
 3. Start adding students and view your summary report
-
+## 🔗 Live Demo
+https://student-grade-tracker-eta.vercel.app/
 ## 📝 License
 
 This project is open-source and available for educational use.
